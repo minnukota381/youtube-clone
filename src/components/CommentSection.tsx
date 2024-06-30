@@ -1,21 +1,17 @@
-// src/components/CommentSection.tsx
 import React from 'react';
-import { Comment } from '../types/video';
 
 interface CommentSectionProps {
-    comments: Comment[];
+    videoId: string;
 }
 
-const CommentSection: React.FC<CommentSectionProps> = ({ comments }) => (
-    <div>
-        <h3>Comments</h3>
-        {comments.map(comment => (
-            <div key={comment.id}>
-                <p>{comment.text}</p>
-                <small>{comment.author}</small>
-            </div>
-        ))}
-    </div>
-);
+const CommentSection: React.FC<CommentSectionProps> = ({ videoId }) => {
+    // Your comment section implementation here
+    return (
+        <div>
+            <h3>Comments for Video ID: {videoId}</h3>
+            {/* Display comments or comment form */}
+        </div>
+    );
+};
 
 export default CommentSection;

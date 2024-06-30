@@ -1,20 +1,28 @@
-// src/pages/VideoDetail.tsx
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Video } from '../types/video';
-import { getVideos } from '../services/videoService';
+import { searchVideos } from '../services/videoService';
 import VideoPlayer from '../components/VideoPlayer';
-import CommentSection from '../components/CommentSection';
+import CommentSection from '../components/CommentSection'; // Adjust import as needed
 
 const VideoDetail: React.FC = () => {
     const { id } = useParams<{ id: string }>();
     const [video, setVideo] = useState<Video | null>(null);
 
     useEffect(() => {
-        getVideos().then(videos => {
-            const selectedVideo = videos.find(video => video.id === id);
-            setVideo(selectedVideo || null);
-        });
+        const fetchVideo = async () => {
+            try {
+                if (!id) return;
+
+                const videos = await searchVideos(id, 10); // Adjust maxResults as needed
+                const selectedVideo = videos.find(video => video.id === id);
+                setVideo(selectedVideo || null);
+            } catch (error) {
+                console.error('Error fetching video:', error);
+            }
+        };
+
+        fetchVideo();
     }, [id]);
 
     if (!video) {
@@ -23,8 +31,13 @@ const VideoDetail: React.FC = () => {
 
     return (
         <div>
+            <h2>{video.title}</h2>
+            <p>{video.description}</p>
+            <img src={video.thumbnail} alt={video.title} />
+            <a href={video.url} target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
             <VideoPlayer video={video} />
-            <CommentSection comments={video.comments} />
+            {/* Ensure CommentSection expects videoId */}
+            <CommentSection videoId={video.id} />
         </div>
     );
 };

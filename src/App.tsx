@@ -3,7 +3,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import VideoDetail from './pages/VideoDetail';
-import './App.css'; // Add appropriate styles
+import './App.css';
 
 const App: React.FC = () => {
     return (
