@@ -1,0 +1,35 @@
+[
+    {
+        "id": "1",
+        "title": "Sample Video 1",
+        "description": "This is a sample video.",
+        "thumbnail": "https://via.placeholder.com/300",
+        "url": "https://www.example.com/video1",
+        "comments": [
+            {
+                "id": "1",
+                "text": "Great video!",
+                "author": "User1"
+            },
+            {
+                "id": "2",
+                "text": "Thanks for sharing.",
+                "author": "User2"
+            }
+        ]
+    },
+    {
+        "id": "2",
+        "title": "Sample Video 2",
+        "description": "This is another sample video.",
+        "thumbnail": "https://via.placeholder.com/300",
+        "url": "https://www.example.com/video2",
+        "comments": [
+            {
+                "id": "3",
+                "text": "Very informative.",
+                "author": "User3"
+            }
+        ]
+    }
+]

@@ -1,0 +1,17 @@
+/* src/pages/Home.css */
+.home {
+    display: flex;
+    flex-direction: column;
+}
+
+.home-content {
+    display: flex;
+}
+
+.sidebar {
+    flex: 1;
+}
+
+.video-list {
+    flex: 4;
+}

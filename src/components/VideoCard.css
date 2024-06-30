@@ -1,0 +1,26 @@
+/* src/components/VideoCard.css */
+.video-card {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    width: 300px;
+}
+
+.video-card img {
+    width: 100%;
+    height: auto;
+}
+
+.video-info {
+    padding: 10px;
+}
+
+.video-info h3 {
+    font-size: 1.1em;
+    margin: 5px 0;
+}
+
+.video-info p {
+    font-size: 0.9em;
+    color: #666;
+}
