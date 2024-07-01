@@ -1,8 +1,7 @@
-// src/components/VideoCard.tsx
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Video } from '../types/video';
-import { fetchRelatedVideos } from '../services/videoService'; // Import your video service function
+import { fetchRelatedVideos } from '../services/videoService';
 import './VideoCard.css';
 
 interface VideoCardProps {
@@ -15,7 +14,7 @@ const VideoCard: React.FC<VideoCardProps> = ({ video }) => {
     React.useEffect(() => {
         const fetchRelated = async () => {
             try {
-                const videos = await fetchRelatedVideos(video.id, 10); // Fetch related videos based on video.id, adjust maxResults as needed
+                const videos = await fetchRelatedVideos(video.id, 10);
                 setRelatedVideos(videos);
             } catch (error) {
                 console.error('Error fetching related videos:', error);
@@ -34,7 +33,6 @@ const VideoCard: React.FC<VideoCardProps> = ({ video }) => {
                     <p>{video.description}</p>
                 </div>
             </Link>
-            {/* Display related videos here */}
             {relatedVideos.length > 0 && (
                 <div className="related-videos">
                     <h4>Related Videos</h4>
