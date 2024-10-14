@@ -45,7 +45,7 @@
     ]
   },
   "devDependencies": {
-    "@types/node": "^22.7.4",
+    "@types/node": "^22.7.5",
     "dotenv": "^16.4.5",
     "dotenv-webpack": "^8.1.0"
   }
